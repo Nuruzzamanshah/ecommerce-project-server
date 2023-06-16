@@ -1,10 +1,10 @@
-const express = require("express");
-const app = express();
-const ErrorHandler = require("./middleware/error");
-const cookieParser = require("cookie-parser");
-const fileUpload = require("express-fileupload");
-const bodyParser = require("body-parser");
-const path = require("path");
+const express       = require("express");
+const app           = express();
+const ErrorHandler  = require("./middleware/error");
+const cookieParser  = require("cookie-parser");
+const fileUpload    = require("express-fileupload");
+const bodyParser    = require("body-parser");
+const path          = require("path");
 
 app.use(express.json());
 app.use(cookieParser());
@@ -20,10 +20,10 @@ if(process.env.NODE_ENV!=="PRODUCTION"){
 
 // Route imports
 const product = require("./routes/ProductRoute");
-const user = require("./routes/UserRoute");
-const order = require("./routes/OrderRoute");
+const user    = require("./routes/UserRoute");
+const order   = require("./routes/OrderRoute");
 const payment = require("./routes/PaymentRoute");
-const cart = require("./routes/WishListRoute");
+const cart    = require("./routes/WishListRoute");
 
 app.use("/api/v2",product);
 
